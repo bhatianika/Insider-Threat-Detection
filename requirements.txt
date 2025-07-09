@@ -2,3 +2,9 @@ streamlit
 pandas
 matplotlib
 joblib
+os
+numpy
+shutil
+sklearn.ensemble
+sklearn.preprocessing
+google.colab
