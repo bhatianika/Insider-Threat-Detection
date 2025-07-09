@@ -3,7 +3,5 @@ pandas
 matplotlib
 joblib
 numpy
-shutil
-sklearn.ensemble
-sklearn.preprocessing
-google.colab
+scikit-learn
+
