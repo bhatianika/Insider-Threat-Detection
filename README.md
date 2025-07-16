@@ -63,7 +63,8 @@ streamlit run app.py
 ```
 
 4. **Upload your raw CSVs** (or use the sample files)
-  
+  use _sample files for no threats result
+  use _anomalous files for threat detection
 
 ---
 
