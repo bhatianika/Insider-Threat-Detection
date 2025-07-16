@@ -145,7 +145,7 @@ if run_button:
                 col3.metric("Anomaly %", f"{anomaly_percentage:.2f}%")
 
                 # Pie Chart
-                normal_count = total_users - anomaly_count
+                '''normal_count = total_users - anomaly_count
                 fig, ax = plt.subplots(figsize=(3, 3))
                 ax.pie(
                     [normal_count, anomaly_count],
@@ -157,7 +157,7 @@ if run_button:
                 )
                 ax.axis("equal")
                 st.pyplot(fig)
-                plt.close(fig)
+                plt.close(fig)'''
 
                 # Download Button
                 csv = results_df.to_csv(index=False).encode('utf-8')
