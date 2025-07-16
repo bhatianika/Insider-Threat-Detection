@@ -125,39 +125,37 @@ if run_button:
             anomalies = results_df[results_df["Is Anomaly"] == -1]
 
             # Always Show Detailed Analysis Section
+            
             with st.expander("📊 Detailed Analysis", expanded=True):
                 if anomalies.empty:
                     st.success("✅ No insider threats detected. All clear!")
                 else:
                     st.warning("🚨 Insider Threats Detected!")
                     st.subheader("🚨 Anomaly Details")
-                    st.dataframe(anomalies.style.highlight_max(axis=0))
-
+            
+                    # Highlight anomalies clearly
+                    styled_anomalies = anomalies.style.set_properties(
+                        **{
+                            "background-color": "#fee2e2",
+                            "color": "#7f1d1d",
+                            "font-size": "16px",
+                            "font-weight": "bold"
+                        }
+                    )
+            
+                    st.dataframe(styled_anomalies, height=300, use_container_width=True)
+            
                 # Summary Statistics
                 st.markdown("### 📊 Summary Statistics:")
                 total_users = len(results_df)
                 anomaly_count = len(anomalies)
                 anomaly_percentage = (anomaly_count / total_users) * 100
-
+            
                 col1, col2, col3 = st.columns(3)
                 col1.metric("Total Users", total_users)
                 col2.metric("Anomalies Detected", anomaly_count)
                 col3.metric("Anomaly %", f"{anomaly_percentage:.2f}%")
 
-                # Pie Chart
-                normal_count = total_users - anomaly_count
-                fig, ax = plt.subplots(figsize=(2, 2))
-                ax.pie(
-                    [normal_count, anomaly_count],
-                    labels=["Normal Users", "Anomalies"],
-                    autopct="%1.1f%%",
-                    startangle=90,
-                    colors=["#60a5fa", "#ef4444"],
-                    textprops={'fontsize': 5} 
-                )
-                ax.axis("equal")
-                st.pyplot(fig)
-                plt.close(fig)
 
                 # Download Button
                 csv = results_df.to_csv(index=False).encode('utf-8')
