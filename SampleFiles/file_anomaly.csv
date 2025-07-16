@@ -1,0 +1,2 @@
+Unnamed: 0,id,date,user,pc,filename,activity,to_removable_media,from_removable_media,content
+,{ANM-FILE-001},1/2/2010 7:00,ANM9999,PC-9999,R:\dark\exploit.pdf,File Write,True,False,D0-CF-11-E0-A1-B1-1A-E1 // Exploit chain
