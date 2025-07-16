@@ -48,7 +48,7 @@ This is a full-stack Machine Learning project that detects **insider threats** i
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/your-username/insider-threat-detection.git
+git clone https://github.com/bhatianika/Insider-Threat-Detection
 cd insider-threat-detection
 ```
 
