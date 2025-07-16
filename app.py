@@ -131,7 +131,7 @@ if run_button:
                 else:
                     st.warning("🚨 Insider Threats Detected!")
                     st.subheader("🚨 Anomaly Details")
-                    st.dataframe(anomalies.style.highlight_max(axis=0, color='red'))
+                    st.dataframe(anomalies.style.highlight_max(axis=0))
 
                 # Summary Statistics
                 st.markdown("### 📊 Summary Statistics:")
@@ -146,7 +146,7 @@ if run_button:
 
                 # Pie Chart
                 normal_count = total_users - anomaly_count
-                fig, ax = plt.subplots(figsize=(1, 1))
+                fig, ax = plt.subplots(figsize=(3, 3))
                 ax.pie(
                     [normal_count, anomaly_count],
                     labels=["Normal Users", "Anomalies"],
